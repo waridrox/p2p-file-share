@@ -17,4 +17,27 @@ app.get("/:room", (req, res) => {
 	});
 });
 
+io.on("connection", socket => {
+	socket.on("join-room", (roomId, userId) => {
+		socket.join(roomId);
+		socket.broadcast.to(roomId).emit("user-connected", userId);
+
+		socket.on("disconnect", () => {
+			socket.broadcast.to(roomId).emit("user-disconnected", userId);
+		})
+
+		socket.on("file-link", (fileLink, senderId) => {
+			socket.broadcast.to(roomId).emit("file-link", fileLink, senderId);
+		})
+
+		socket.on("done-downloading", senderId => {
+			io.to(senderId).emit("done-downloading");
+		})
+
+		socket.on("connection-established", (userId) => {
+			socket.broadcast.to(roomId).emit("connection-established", userId);
+		})
+	})
+})
+
 server.listen(process.env.PORT || 3000);
