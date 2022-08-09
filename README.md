@@ -15,9 +15,14 @@ PeerShare uses WebTorrent to transfer files between multiple devices, and WebSoc
 - Easy to use, no app installation or dependency required.
 
 
+## Comparision with 
+![DATA TRANSFER PERFORMANCE OF BITTORRENT TRANSMISSION PROTOCOLS (NO OF PACKETS VS PROTOCOL)](https://user-images.githubusercontent.com/58583793/183577816-d37070df-3641-44e1-aac4-6fdd89e2cbe7.png)
+
+![DATA TRANSFER PERFORMANCE OF BITTORRENT TRANSMISSION PROTOCOLS (BANDWIDTH VS PROTOCOL)](https://user-images.githubusercontent.com/58583793/183578053-fcaab0c4-3444-429a-91f7-14653c117dcd.png)
+
 ## Try it live!
 
-- Head over to the website [here.](https://p2p-file-share.herokuapp.com/)
+- Head over to the website [here](https://p2p-file-share.herokuapp.com/).
 - A random string will get appended to the above URL.
 - Share the link of the page to the other peer over the same network.
 - A connection will be established once the other peer opens the link.
@@ -30,6 +35,14 @@ PeerShare uses WebTorrent to transfer files between multiple devices, and WebSoc
 
 **Client:** HTML, CSS, JS, ejs
 
+
+## References
+
+- https://webtorrent.io/faq
+- https://www.researchgate.net/figure/Total-number-of-packets-for-1MB-file-transfer_fig2_336175322
+- https://stackoverflow.com/questions/44434604/how-does-utorrent-choose-between-tcp-and-utp
+- https://news.ycombinator.com/item?id=8317441
+- https://feross.org/libtorrent-webtorrent/
 
 ## License
 
